@@ -1,3 +1,5 @@
+'use client';
+
 import React from "react";
 import Link from "next/link";
 import { Briefcase, GraduationCap } from "lucide-react";
@@ -21,7 +23,7 @@ const itemVariants = {
 
 const HeroSection = () => {
   return (
-    <section className="bg-white py-20 px-6 md:px-12 lg:px-24">
+    <section className="bg-white py-16 px-4 sm:px-6 md:px-12 lg:px-24">
       <motion.div
         className="max-w-6xl mx-auto flex flex-col items-center text-center"
         variants={containerVariants}
@@ -30,7 +32,7 @@ const HeroSection = () => {
       >
         {/* Heading */}
         <motion.h1
-          className="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6"
+          className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6"
           variants={itemVariants}
         >
           <span className="font-tektur block">Unlock Opportunities with</span>
@@ -40,7 +42,7 @@ const HeroSection = () => {
 
         {/* Description */}
         <motion.p
-          className="text-xl font-semibold text-gray-400 max-w-2xl mb-12"
+          className="text-base sm:text-lg md:text-xl font-semibold text-gray-400 max-w-2xl mb-12"
           variants={itemVariants}
         >
           Discover top jobs and internships built for ambitious minds. Your
@@ -48,7 +50,7 @@ const HeroSection = () => {
         </motion.p>
 
         {/* Feature Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full mt-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 w-full mt-4">
           {/* Job Card */}
           <motion.div variants={itemVariants}>
             <Link
@@ -57,11 +59,11 @@ const HeroSection = () => {
             >
               <div className="flex items-center gap-4 mb-3">
                 <Briefcase className="text-[#144946] w-8 h-8" />
-                <h3 className="text-3xl font-bold text-[#144946]">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#144946]">
                   Find Your Dream Job
                 </h3>
               </div>
-              <p className="text-base font-semibold text-[#144946]">
+              <p className="text-sm sm:text-base font-semibold text-[#144946]">
                 Explore curated roles from top companies and take your next big step.
               </p>
               <FaArrowRight
@@ -79,11 +81,11 @@ const HeroSection = () => {
             >
               <div className="flex items-center gap-4 mb-3">
                 <GraduationCap className="text-[#B3EFA9] w-8 h-8" />
-                <h3 className="text-3xl font-bold text-[#B3EFA9]">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#B3EFA9]">
                   Launch with Internships
                 </h3>
               </div>
-              <p className="text-base font-semibold text-[#B3EFA9]">
+              <p className="text-sm sm:text-base font-semibold text-[#B3EFA9]">
                 Gain real-world experience and grow with hands-on industry exposure.
               </p>
               <FaArrowRight

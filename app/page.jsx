@@ -7,12 +7,11 @@ import SkillsScroll from './components/SkillsScroll';
 import WhyCH from './components/WhyCH';
 import WorkCompo from './components/WorkCompo';
 
-
 export default function Home() {
   return (
     <div className="relative">
-      {/* Scrollable Content with bottom padding to avoid overlap */}
-      <div className="relative z-20 pb-[300px]">
+      {/* Main Content */}
+      <div className="relative z-20">
         <HeroSection />
         <WorkCompo />
         <WhyCH />
@@ -20,12 +19,8 @@ export default function Home() {
         <HRCard />
       </div>
 
-     
-
-      {/* Fixed Footer */}
-      <div className="fixed bottom-0 left-0 w-full z-10">
-        <Footer />
-      </div>
+      {/* Normal Footer at bottom */}
+      <Footer />
     </div>
   );
 }

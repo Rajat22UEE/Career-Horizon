@@ -26,32 +26,36 @@ const teamMembers = [
 
 export default function OurTeam() {
   return (
-    <div className="bg-gray-50 py-20 px-6">
+    <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-10">
       {/* Heading */}
-      <h2 className="text-5xl font-extrabold text-center text-gray-800 mb-16">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-gray-800 mb-16">
         Meet <span className="text-blue-600">Our Team</span>
       </h2>
 
-      {/* Cards */}
-      <div className="max-w-6xl mx-auto grid gap-10 sm:grid-cols-1 md:grid-cols-3">
+      {/* Cards Grid */}
+      <div className="max-w-6xl mx-auto grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {teamMembers.map((member, index) => (
           <div
             key={index}
             data-aos="fade-up"
             data-aos-delay={index * 200}
             data-aos-duration="800"
-            className="bg-white border border-gray-200 rounded-3xl p-8 text-center shadow-none 
+            className="bg-white border border-gray-200 rounded-3xl p-6 sm:p-8 text-center shadow-none 
               transition-all ease-in-out duration-300 hover:-translate-y-1 
               hover:shadow-[0_0_0_4px_rgba(59,130,246,0.3)] active:translate-y-0.5"
           >
             <div className="hover:scale-105 transition-transform duration-300 ease-out">
-              <FaUserCircle className="text-blue-500 mx-auto mb-5" size={100} />
+              <FaUserCircle className="text-blue-500 mx-auto mb-5" size={80} />
             </div>
 
-            <h3 className="text-2xl font-bold text-gray-800 mb-1">{member.name}</h3>
-            <p className="text-base text-gray-600 mb-5 font-medium">{member.role}</p>
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-1">
+              {member.name}
+            </h3>
+            <p className="text-sm sm:text-base text-gray-600 mb-5 font-medium">
+              {member.role}
+            </p>
 
-            <div className="flex justify-center gap-5 text-2xl">
+            <div className="flex justify-center gap-5 text-xl sm:text-2xl">
               <a
                 href={member.linkedin}
                 target="_blank"
@@ -72,6 +76,6 @@ export default function OurTeam() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
