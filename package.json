@@ -1,28 +1,23 @@
 {
-  "name": "career_horizon",
-  "version": "0.1.0",
+  "name": "career-horizon",
   "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "frontend",
+    "admin",
+    "backend"
+  ],
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "aos": "^2.3.4",
-    "axios": "^1.10.0",
-    "framer-motion": "^12.23.1",
-    "lucide-react": "^0.525.0",
-    "next": "15.3.4",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-icons": "^5.5.0"
+    "dev:frontend": "npm --workspace frontend run dev",
+    "dev:admin": "npm --workspace admin run dev",
+    "dev:backend": "npm --workspace backend run dev",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:admin\" \"npm run dev:backend\"",
+    "build:frontend": "npm --workspace frontend run build",
+    "build:admin": "npm --workspace admin run build",
+    "build:backend": "npm --workspace backend run build",
+    "build": "npm run build:frontend && npm run build:admin && npm run build:backend"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4",
-    "eslint": "^9",
-    "eslint-config-next": "15.3.4",
-    "tailwindcss": "^4"
+    "concurrently": "^8.2.2"
   }
 }
