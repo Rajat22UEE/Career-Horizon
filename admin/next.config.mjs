@@ -2,10 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   experimental: {
-    optimizeCss: false, // disable lightningcss, fallback to postcss
+    optimizeCss: false, // fallback to PostCSS
   },
 
-  // ✅ Add security headers for Google Fonts + API calls
   async headers() {
     return [
       {
@@ -15,12 +14,12 @@ const nextConfig = {
             key: "Content-Security-Policy",
             value: `
               default-src 'self';
-              style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-              font-src 'self' https://fonts.gstatic.com;
               script-src 'self';
+              style-src 'self' 'unsafe-inline';
+              font-src 'self';
               img-src 'self' data:;
               connect-src 'self' ${process.env.NEXT_PUBLIC_API_URL || ""};
-            `.replace(/\n/g, ""),
+            `.replace(/\s{2,}/g, " "),
           },
         ],
       },
